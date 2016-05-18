@@ -7,6 +7,7 @@ juke.factory('PlayerFactory', function(){
   // var playing;
   var obj = {
     playing: false,
+    previousSong: null,
     start: function(audioObj, songList) {
       audioObject = audioObj;
       listOfSongs = songList;
@@ -19,6 +20,7 @@ juke.factory('PlayerFactory', function(){
     pause: function() {
       currentSong.pause();
       obj.playing = false;
+      obj.previousSong = audioObject;
     },
     resume: function() {
       currentSong.play()
